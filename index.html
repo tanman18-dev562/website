@@ -626,7 +626,11 @@
         <textarea name="message" rows="4" placeholder="What should it do, what size, any reference images?" required></textarea>
       </div>
       <div class="field checkbox-field">
-        <label><input type="checkbox" name="print" value="Yes" /> Include printing (+£2–5)</label>
+        <label>
+  <input type="hidden" name="printing" value="No">
+  <input type="checkbox" name="printing" value="Yes">
+  Include printing (+£2–5)
+</label>
       </div>
       <button type="submit" class="submit-btn">Send Request →</button>
     </form>
