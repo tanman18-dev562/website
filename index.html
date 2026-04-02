@@ -466,10 +466,27 @@
     cursor: pointer;
   }
 
-  .checkbox-field input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent);
+  .checkbox-field input[type="checkbox"] { display: none; }
+
+  .custom-check {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    background: var(--card);
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .custom-check::after {
+    content: '';
+  }
+
+  input[type="checkbox"]:checked + .custom-check {
+    background: var(--accent);
+    border-color: var(--accent);
   }
 
   .submit-btn {
@@ -626,11 +643,8 @@
         <textarea name="message" rows="4" placeholder="What should it do, what size, any reference images?" required></textarea>
       </div>
       <div class="field checkbox-field">
-        <label>
-  <input type="hidden" name="printing" value="No">
-  <input type="checkbox" name="printing" value="Yes">
-  Include printing (+£2–5)
-</label>
+        <label><input type="checkbox" id="print-check" name="print" value="Yes" onchange="document.getElementById('print-hidden').value = this.checked ? 'Yes' : 'No'" /><span class="custom-check"></span> Include printing (+£2–5)</label>
+        <input type="hidden" id="print-hidden" name="print_confirmed" value="No" />
       </div>
       <button type="submit" class="submit-btn">Send Request →</button>
     </form>
@@ -662,5 +676,4 @@
   });
 </script>
 </body>
-  </html>
-  
+</html>
