@@ -515,9 +515,49 @@
     text-align: center;
   }
 
-  @media (max-width: 480px) {
-    .hourly-block { grid-template-columns: 1fr; }
+  @media (max-width: 600px) {
+    body { padding: 32px 16px 60px; }
+
+    nav { margin-bottom: 48px; }
+
+    .hero { margin-bottom: 48px; }
+
+    h1 { font-size: 2.6rem; }
+
     .cards { grid-template-columns: 1fr; }
+
+    .addon-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .addon-price { font-size: 1.3rem; }
+
+    .cta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cta-btn { width: 100%; text-align: center; }
+
+    .modal-box {
+      padding: 28px 20px;
+    }
+
+    .modal-title { font-size: 1.2rem; }
+  }
+
+  @media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+
+    .wrap { padding: 0 40px 100px; }
+
+    nav { padding: 40px 0 0; margin-bottom: 100px; }
+
+    .hero { margin-bottom: 100px; }
+
+    h1 { font-size: 5.5rem; }
   }
 </style>
 </head>
