@@ -548,6 +548,61 @@
     .modal-title { font-size: 1.2rem; }
   }
 
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    padding: 40px 24px;
+  }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-left { display: flex; flex-direction: column; gap: 6px; }
+
+  .footer-logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+
+  .footer-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .footer-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 100px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .footer-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 600px) {
+    footer { padding: 32px 16px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+
   @media (min-width: 900px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
 
@@ -646,6 +701,22 @@
   </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-logo">LAYERWORKS</div>
+      <div class="footer-sub">Custom 3D print design · Bath, UK · © 2024</div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-pill">3D Modelling</div>
+      <div class="footer-pill">FDM Printing</div>
+      <div class="footer-pill">File Modifications</div>
+      <div class="footer-pill">Prices Negotiable</div>
+    </div>
+  </div>
+</footer>
 
 <!-- MODAL -->
 <div id="modal">
